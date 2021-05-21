@@ -1,21 +1,3 @@
-// Vue.component("todo-list", {
-// 	template: "<div>This is a tab</div>"
-// })
-
-// Vue.component("completed-list", {
-// 	template: "<div>This is a tab</div>"
-// })
-
-// Vue.component('todo-item', {
-// 	template: '\
-// 		<li>\
-// 			{{ todo }}\
-// 			<button v-on:click="$emit(\'remove\')">Remove</button>\
-// 		</li>\
-// 	',
-// 	props: ['todo']
-// })
-
 Vue.component('tab-priority', {
 	template: '\
 		<li>\
@@ -24,7 +6,7 @@ Vue.component('tab-priority', {
 		</li>\
 	',
 	props: ['todo']
-})
+});
 
 Vue.component('tab-general', {
 	template: '\
@@ -44,7 +26,7 @@ Vue.component('tab-completed', {
 		</li>\
 	',
 	props: ['todo']
-})
+});
 
 new Vue({
 	el: "#todo-tabs",
@@ -75,22 +57,4 @@ new Vue({
 			this.todoText = ''
 		}
 	}
-})
-
-// var list = new Vue({
-// 	el: '#todo-list',
-// 	data: {
-// 		todos: [],
-// 		todoText: '',
-// 		currentId: 1
-// 	},
-// 	methods: {
-// 		addTodo: function () {
-// 			this.todos.push({
-// 				id: this.currentId++,
-// 				text: this.todoText
-// 			})
-// 			this.todoText = ''
-// 		}
-// 	}
-// })
+});
