@@ -1,0 +1,14 @@
+.tab-button {
+	margin-right: -1px;
+	margin-bottom: -1px;
+	cursor: pointer;
+}
+
+.tab-button.active {
+	background-color: grey;
+}
+
+.tab {
+	padding: .5em 0 .5em .5em; 
+	border: 1px solid black;
+}
