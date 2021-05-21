@@ -1,24 +1,4 @@
-Vue.component('tab-priority', {
-	template: '\
-		<li>\
-			{{ todo }}\
-			<button v-on:click="$emit(\'remove\')">Remove</button>\
-		</li>\
-	',
-	props: ['todo']
-});
-
-Vue.component('tab-general', {
-	template: '\
-		<li>\
-			{{ todo }} {{todo.key}}\
-			<button v-on:click="$emit(\'remove\')">Remove</button>\
-		</li>\
-	',
-	props: ['todo']
-})
-
-Vue.component('tab-completed', {
+Vue.component('todo-list', {
 	template: '\
 		<li>\
 			{{ todo }}\
@@ -40,7 +20,7 @@ new Vue({
 				Completed: []
 			},
 			todoText: '',
-			currentId: 1
+			// currentId: 1
 		}
 	},
 	computed: {
@@ -50,11 +30,8 @@ new Vue({
 	},
 	methods: {
 		addTodo: function () {
-			this.todos[this.currentTab].push({
-				id: this.currentId++,
-				text: this.todoText
-			})
-			this.todoText = ''
+			this.todos[this.currentTab].push(this.todoText);
+			this.todoText = '';
 		}
 	}
 });

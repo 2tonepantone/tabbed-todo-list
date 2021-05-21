@@ -27,10 +27,10 @@
 			</form>
 			<ul>
 				<li
-					v-bind:is="currentTabComponent"
+					is="todo-list"
 					v-for="(todo, index) in todos[currentTab]"
 					v-on:remove="todos[currentTab].splice(index, 1)"
-					v-bind:todo="todo.text"
+					v-bind:todo="todo"
 					v-bind:key="index"
 				></li>
 			</ul>
