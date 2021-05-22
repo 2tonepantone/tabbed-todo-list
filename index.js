@@ -3,6 +3,7 @@ Vue.component('todo-list', {
 		<li>\
 			{{ todo }}\
 			<button v-on:click="$emit(\'remove\')">Remove</button>\
+			<button v-on:click="$emit(\'complete\')">Completed</button>\
 		</li>\
 	',
 	props: ['todo']
@@ -12,15 +13,14 @@ new Vue({
 	el: "#todo-tabs",
 	data() { 
 		return {
-			currentTab: "Priority",
-			todoTabs: ["Priority", "General", "Completed"],
+			currentTab: "General",
+			todoTabs: ["General", "Priority", "Completed"],
 			todos: {
 				Priority: [],
 				General: [],
 				Completed: []
 			},
 			todoText: '',
-			// currentId: 1
 		}
 	},
 	computed: {
@@ -32,6 +32,9 @@ new Vue({
 		addTodo: function () {
 			this.todos[this.currentTab].push(this.todoText);
 			this.todoText = '';
+		},
+		completeTodo: function (completed) {
+			this.todos['Completed'].unshift(completed.join());
 		}
 	}
 });

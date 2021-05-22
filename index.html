@@ -30,6 +30,7 @@
 					is="todo-list"
 					v-for="(todo, index) in todos[currentTab]"
 					v-on:remove="todos[currentTab].splice(index, 1)"
+					v-on:complete="completeTodo(todos[currentTab].splice(index, 1))"
 					v-bind:todo="todo"
 					v-bind:key="index"
 				></li>
