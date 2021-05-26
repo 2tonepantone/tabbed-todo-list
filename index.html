@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Playing with Dynamic Tabs</title>
+	<title>Simply ToDos</title>
 	<link rel="stylesheet" href="style.css">
 	<script src='https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js'></script>
 </head>
@@ -15,7 +15,14 @@
 		>
 			{{ tab }}
 		</button>
-		<div class="tab">
+		<component v-bind:is="currentTabComponent" class="tab"></component>
+	</div>
+	<script src="index.js"></script>
+</body>
+</html>
+
+
+<!-- 		<div class="tab">
 			<form v-on:submit.prevent="addTodo">
 				<label for="addTodo">Add task:</label>
 				<input 
@@ -24,19 +31,12 @@
 					v-model="todoText"
 				>
 				<button>Add</button>
-			</form>
-			<ul>
-				<li
-					is="todo-list"
-					v-for="(todo, index) in todos[currentTab]"
+				<todo-list
 					v-on:remove="todos[currentTab].splice(index, 1)"
 					v-on:complete="completeTodo(todos[currentTab].splice(index, 1))"
 					v-bind:todo="todo"
 					v-bind:key="index"
-				></li>
-			</ul>
-		</div>
-	</div>
-	<script src="index.js"></script>
-</body>
-</html>
+				></todo-list>
+			</form>
+			
+		</div> -->
